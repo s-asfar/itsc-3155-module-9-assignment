@@ -1,8 +1,14 @@
 {% extends '_layout.html' %}
-
 {% block title %}Movie Rating App | Movie{% endblock %}
-
 {% block body %}
-<h1 class="mb-5"></h1>
+<!-- if invalid movie id -->
+{% if message %}
+<h1>{{ message }}</h1>
+{% else %}
+<h1 class="mb-5">{{ movie.title }}</h1>
+<p>Rating: {{ movie.rating }}</p>
+<p>Genre: {{ movie.genre }}</p>
+<p>Director: {{ movie.director }}</p>
 <!-- TODO: Feature 4 -->
+{% endif %}
 {% endblock %}

@@ -39,8 +39,20 @@ def search_movies():
 
 @app.get('/movies/<int:movie_id>')
 def get_single_movie(movie_id: int):
-    # TODO: Feature 4
-    return render_template('get_single_movie.html')
+    """
+    This function retrieves a movie with a given id
+
+    Args:
+        movie_id (int): The ID of the movie
+
+    Returns:
+        If the movie is found it returns the HTML template with the movie data.
+        If the movie is not found ir returns with an error message and a 404 error
+    """
+    movie = movie_repository.get_movie_by_id(movie_id)
+    if movie is None:
+        return render_template('get_single_movie.html', message="Movie Not Found"), 404
+    return render_template('get_single_movie.html', movie=movie)
 
 
 @app.get('/movies/<int:movie_id>/edit')
