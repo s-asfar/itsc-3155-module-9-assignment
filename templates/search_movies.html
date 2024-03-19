@@ -3,7 +3,19 @@
 {% block title %}Movie Rating App | Search Movie Ratings{% endblock %}
 
 {% block body %}
+
+{% if movie %}
+    <h1>{{ movie.title }}</h1>
+    <p>Directed by: {{ movie.director }}</p>
+    <p>Rating: {{ movie.rating }}</p>
+{% else %}
 <h1 class="mb-5">Search Movie Ratings</h1>
 <p class="mb-3">Search for a movie rating below</p>
+<form action="{{ url_for('search_movies') }}" method="get">
+    <input type="text" name="movie_title" placeholder="Enter movie title" required>
+    <input type="submit" value="Search">
+</form>
+{% endif %}
+
 <!-- TODO: Feature 3 -->
 {% endblock %}
