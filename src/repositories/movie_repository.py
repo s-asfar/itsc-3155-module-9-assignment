@@ -11,10 +11,11 @@ def get_movie_repository():
     class MovieRepository:
         """In memory database which is a simple dict of movies"""
 
+        
+
         def __init__(self) -> None:
             self._db: dict[int, Movie] = {}
-            #deleted static movie test, ignore this line
-
+            
         def get_all_movies(self) -> dict[int, Movie]:
             """Simply return all movies from the in-memory database"""
             return {**self._db}  # Use the splat operator to make a clone of the dict
