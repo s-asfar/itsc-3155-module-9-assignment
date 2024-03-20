@@ -40,7 +40,13 @@ def search_movies():
         if movie:
             return render_template('search_movies.html', search_active=True, movie=movie)
         else:
-            return 'No movie found with that title' , 404
+            return '''
+            <p>No movie found with that title</p> 
+            <form action="/movies/search" method="get">
+                <input type="submit" value="Back to search">
+                </form>
+                ''', 404
+            
     else:
         return render_template('search_movies.html', search_active=True)
 
