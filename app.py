@@ -15,8 +15,7 @@ def index():
 
 @app.get('/movies')
 def list_all_movies():
-    movie_repo = get_movie_repository()
-    all_movies = movie_repo.get_all_movies()
+    all_movies = get_movie_repository().get_all_movies()
     return render_template('list_all_movies.html', all_movies=all_movies, list_movies_active=True)
 
 

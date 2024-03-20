@@ -15,7 +15,7 @@
       </tr>
     </thead>
     <tbody>
-        {% for movie in all_movies %}
+        {% for movie_id, movie in all_movies.items() %}
           <tr>
             <td>{{ movie.title }}</td>
             <td>{{ movie.director }}</td>
