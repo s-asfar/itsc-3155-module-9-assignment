@@ -13,7 +13,7 @@ def get_movie_repository():
 
         def __init__(self) -> None:
             self._db: dict[int, Movie] = {}
-            self._db[1] = Movie(1, "Test Movie", "Test Director", 5)
+            
 
         def get_all_movies(self) -> dict[int, Movie]:
             """Simply return all movies from the in-memory database"""
