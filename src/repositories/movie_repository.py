@@ -11,9 +11,11 @@ def get_movie_repository():
     class MovieRepository:
         """In memory database which is a simple dict of movies"""
 
+        
+
         def __init__(self) -> None:
             self._db: dict[int, Movie] = {}
-
+            
         def get_all_movies(self) -> dict[int, Movie]:
             """Simply return all movies from the in-memory database"""
             return {**self._db}  # Use the splat operator to make a clone of the dict
@@ -37,7 +39,7 @@ def get_movie_repository():
             # Create the movie instance
             new_id = randint(0, 100_000)  # Sufficiently unique ID for our purposes
             movie = Movie(new_id, title, director, rating)
-            # Save the instance in our in-memory database
+            # Save the instance in our in-memory database d
             self._db[new_id] = movie
             # Return the movie instance
             return movie
